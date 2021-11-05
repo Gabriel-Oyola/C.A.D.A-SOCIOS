@@ -54,6 +54,8 @@ namespace C.A.D.A_SOCIOS
             this.btEliminar = new System.Windows.Forms.Button();
             this.labds = new System.Windows.Forms.Label();
             this.cbPlatea = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtNacimiento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +68,7 @@ namespace C.A.D.A_SOCIOS
             this.btAgregar.TabIndex = 0;
             this.btAgregar.Text = "AGREGAR";
             this.btAgregar.UseVisualStyleBackColor = true;
+            this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
             // pictureBox2
             // 
@@ -93,7 +96,7 @@ namespace C.A.D.A_SOCIOS
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(357, 144);
+            this.label2.Location = new System.Drawing.Point(355, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 18);
             this.label2.TabIndex = 4;
@@ -101,23 +104,23 @@ namespace C.A.D.A_SOCIOS
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(360, 165);
+            this.txtNombre.Location = new System.Drawing.Point(358, 156);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(198, 20);
+            this.txtNombre.Size = new System.Drawing.Size(156, 20);
             this.txtNombre.TabIndex = 5;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(590, 165);
+            this.txtApellido.Location = new System.Drawing.Point(541, 156);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(198, 20);
+            this.txtApellido.Size = new System.Drawing.Size(140, 20);
             this.txtApellido.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(587, 144);
+            this.label3.Location = new System.Drawing.Point(542, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 18);
             this.label3.TabIndex = 7;
@@ -144,7 +147,7 @@ namespace C.A.D.A_SOCIOS
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(587, 198);
+            this.label5.Location = new System.Drawing.Point(564, 199);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 18);
             this.label5.TabIndex = 11;
@@ -152,7 +155,7 @@ namespace C.A.D.A_SOCIOS
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(590, 219);
+            this.txtEdad.Location = new System.Drawing.Point(564, 220);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(79, 20);
             this.txtEdad.TabIndex = 10;
@@ -160,7 +163,7 @@ namespace C.A.D.A_SOCIOS
             // cbCarnet
             // 
             this.cbCarnet.FormattingEnabled = true;
-            this.cbCarnet.Location = new System.Drawing.Point(675, 219);
+            this.cbCarnet.Location = new System.Drawing.Point(649, 219);
             this.cbCarnet.Name = "cbCarnet";
             this.cbCarnet.Size = new System.Drawing.Size(117, 21);
             this.cbCarnet.TabIndex = 12;
@@ -169,7 +172,7 @@ namespace C.A.D.A_SOCIOS
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(675, 198);
+            this.label6.Location = new System.Drawing.Point(646, 197);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 18);
             this.label6.TabIndex = 13;
@@ -262,7 +265,7 @@ namespace C.A.D.A_SOCIOS
             // 
             this.labds.AutoSize = true;
             this.labds.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labds.Location = new System.Drawing.Point(798, 197);
+            this.labds.Location = new System.Drawing.Point(769, 199);
             this.labds.Name = "labds";
             this.labds.Size = new System.Drawing.Size(74, 18);
             this.labds.TabIndex = 24;
@@ -271,10 +274,27 @@ namespace C.A.D.A_SOCIOS
             // cbPlatea
             // 
             this.cbPlatea.FormattingEnabled = true;
-            this.cbPlatea.Location = new System.Drawing.Point(798, 218);
+            this.cbPlatea.Location = new System.Drawing.Point(772, 220);
             this.cbPlatea.Name = "cbPlatea";
             this.cbPlatea.Size = new System.Drawing.Size(107, 21);
             this.cbPlatea.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(693, 135);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 18);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "NACIMIENTO:";
+            // 
+            // txtNacimiento
+            // 
+            this.txtNacimiento.Location = new System.Drawing.Point(696, 156);
+            this.txtNacimiento.Name = "txtNacimiento";
+            this.txtNacimiento.Size = new System.Drawing.Size(116, 20);
+            this.txtNacimiento.TabIndex = 26;
             // 
             // Form1
             // 
@@ -282,6 +302,8 @@ namespace C.A.D.A_SOCIOS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(907, 617);
+            this.Controls.Add(this.txtNacimiento);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.labds);
             this.Controls.Add(this.cbPlatea);
             this.Controls.Add(this.btEliminar);
@@ -342,6 +364,8 @@ namespace C.A.D.A_SOCIOS
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.Label labds;
         private System.Windows.Forms.ComboBox cbPlatea;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtNacimiento;
     }
 }
 
